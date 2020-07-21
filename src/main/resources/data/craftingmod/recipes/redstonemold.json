@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:redstone"
+  },
+  "result": "craftingmod:redstone_mold",
+  "experience": 4.0,
+  "cookingtime": 200
+}

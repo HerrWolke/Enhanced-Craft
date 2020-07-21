@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xdx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "craftingmod:redstone_mold"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result":
+  {
+    "item": "craftingmod:ruby",
+    "count": 1
+  }
+}
