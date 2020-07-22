@@ -1,6 +1,20 @@
 {
   "item.craftingmod.ruby": "Ruby",
-  "item.craftingmod.redstone_mold": "Redstone Mold",
   "block.craftingmod.ruby_block": "Ruby Block",
-  "itemGroup.CraftingMod": "Crafting Mod"
+
+  "item.craftingmod.redstone_mold": "Redstone Mold",
+
+  "item.craftingmod.ruby_sword": "Ruby Sword",
+  "item.craftingmod.ruby_shovel": "Ruby Shovel",
+  "item.craftingmod.ruby_pickaxe": "Ruby Pickaxe",
+  "item.craftingmod.ruby_axe": "Ruby Axe",
+
+  "item.craftingmod.ruby_helmet": "Ruby Helmet",
+  "item.craftingmod.ruby_chestplate": "Ruby Chestplate",
+  "item.craftingmod.ruby_leggings": "Ruby Leggins",
+  "item.craftingmod.ruby_boots": "Ruby Boots",
+
+  "itemGroup.CraftingMod": "Crafting Mod",
+
+  "item.craftingmod.ruby_apple": "Ruby Apple"
 }

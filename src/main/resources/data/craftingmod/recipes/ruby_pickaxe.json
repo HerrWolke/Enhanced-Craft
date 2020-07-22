@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "craftingmod:ruby"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "craftingmod:ruby_pickaxe",
+    "count": 1
+  }
+}

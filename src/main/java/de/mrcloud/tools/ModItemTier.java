@@ -1,5 +1,6 @@
 package de.mrcloud.tools;
 
+import de.mrcloud.util.RegistryHandler;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
@@ -9,7 +10,9 @@ public enum ModItemTier implements IItemTier {
 
     //Damage = 1(Base) + attackDamage(3) + addedDamage(constructor)
     //AttackSpeed = 4(Base) + added(constructor)
-    RUBY(3, 2800, 9.0f, 3.0F, 14, repairMaterial);
+    RUBY(3, 2800, 9.0f, 3.0F, 14, () -> {
+        return Ingredient.fromItems(RegistryHandler.RUBY.get());
+    });
 
     private final int harvestLevel;
     private final int maxUses;
@@ -30,31 +33,31 @@ public enum ModItemTier implements IItemTier {
 
     @Override
     public int getMaxUses() {
-        return 0;
+        return maxUses;
     }
 
     @Override
     public float getEfficiency() {
-        return 0;
+        return efficiency;
     }
 
     @Override
     public float getAttackDamage() {
-        return 0;
+        return attackDamage;
     }
 
     @Override
     public int getHarvestLevel() {
-        return 0;
+        return harvestLevel;
     }
 
     @Override
     public int getEnchantability() {
-        return 0;
+        return enchantability;
     }
 
     @Override
     public Ingredient getRepairMaterial() {
-        return null;
+        return repairMaterial.get();
     }
 }
