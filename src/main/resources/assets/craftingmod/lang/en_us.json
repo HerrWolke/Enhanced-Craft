@@ -1,6 +1,10 @@
 {
   "item.craftingmod.ruby": "Ruby",
   "block.craftingmod.ruby_block": "Ruby Block",
+  "block.craftingmod.ruby_ore": "Ruby Ore",
+  "block.craftingmod.oven": "Hot Oven(W.I.P)",
+  "block.craftingmod.press": "Press(W.I.P)",
+
 
   "item.craftingmod.redstone_mold": "Redstone Mold",
 

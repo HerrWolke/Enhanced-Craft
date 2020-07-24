@@ -1,8 +1,8 @@
-package de.mrcloud.armour;
+package de.mrcloud.util.enums;
 
 import de.mrcloud.main.CraftingMod;
-import de.mrcloud.util.RegistryHandler;
-import net.minecraft.block.SoundType;
+import de.mrcloud.registry.CmBlocks;
+import de.mrcloud.registry.CmItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -18,8 +18,8 @@ public enum ModArmourMaterial implements IArmorMaterial {
     //Pathway to layer = ruby_layer_1 and ruby_layer_2
     //maxDamageFactor detemines the durability by multiplying this value with the contents of MAX_DAMAGE_ARRAY(1 = Helmet, 2 = Leggins, 3 =Chestplate, 4 = Boots)
     //Toughness increases the protection(not visible but invisible actual)
-    RUBY(CraftingMod.MOD_ID + ":ruby",38,new int[] {2, 6, 7, 2},18, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,3.5F,() ->
-    {return Ingredient.fromItems(RegistryHandler.RUBY.get()); });
+    RUBY(CraftingMod.MOD_ID + ":ruby",38,new int[] {4, 10, 8, 4},16, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,3.5F,() ->
+    {return Ingredient.fromItems(CmItems.RUBY.get()); },0.1F);
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] {11,16,15,13};
     private final String name;
@@ -29,8 +29,9 @@ public enum ModArmourMaterial implements IArmorMaterial {
     private final SoundEvent soundEvent;
     private final float toughness;
     private final Supplier<Ingredient> repairMaterial;
+    private final float knockBackResistance;
 
-    ModArmourMaterial(String name, int maxDamageFactor,int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent,float toughness,Supplier<Ingredient> repairMaterial) {
+    ModArmourMaterial(String name, int maxDamageFactor,int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent,float toughness,Supplier<Ingredient> repairMaterial,float knockBackResistance) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
         this.damageReductionAmountArray = damageReductionAmountArray;
@@ -38,6 +39,7 @@ public enum ModArmourMaterial implements IArmorMaterial {
         this.soundEvent = soundEvent;
         this.toughness = toughness;
         this.repairMaterial = repairMaterial;
+        this.knockBackResistance = knockBackResistance;
     }
 
     @Override
@@ -76,4 +78,10 @@ public enum ModArmourMaterial implements IArmorMaterial {
     public float getToughness() {
         return this.toughness;
     }
+
+    @Override
+    public float getKnockbackResistance() {
+        return this.knockBackResistance;
+    }
+
 }

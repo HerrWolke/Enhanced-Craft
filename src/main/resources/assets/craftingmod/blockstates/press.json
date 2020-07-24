@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "craftingmod:block/press" },
+    "facing=south": { "model": "craftingmod:block/press", "y":  180},
+    "facing=west": { "model": "craftingmod:block/press", "y":  270},
+    "facing=east": { "model": "craftingmod:block/press", "y":  90}
+  }
+}

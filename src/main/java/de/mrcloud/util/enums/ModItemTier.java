@@ -1,6 +1,7 @@
-package de.mrcloud.tools;
+package de.mrcloud.util.enums;
 
-import de.mrcloud.util.RegistryHandler;
+import de.mrcloud.registry.CmBlocks;
+import de.mrcloud.registry.CmItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
@@ -11,7 +12,7 @@ public enum ModItemTier implements IItemTier {
     //Damage = 1(Base) + attackDamage(3) + addedDamage(constructor)
     //AttackSpeed = 4(Base) + added(constructor)
     RUBY(3, 2800, 9.0f, 3.0F, 14, () -> {
-        return Ingredient.fromItems(RegistryHandler.RUBY.get());
+        return Ingredient.fromItems(CmItems.RUBY.get());
     });
 
     private final int harvestLevel;
