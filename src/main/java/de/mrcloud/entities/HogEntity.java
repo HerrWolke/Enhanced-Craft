@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.brain.task.WalkRandomlyTask;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,21 +38,23 @@ public class HogEntity extends AnimalEntity {
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return MobEntity.func_233666_p_()
                 .createMutableAttribute(Attributes.MAX_HEALTH, 12.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5D);
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D);
     }
 
     @Override
     protected void registerGoals() {
         super.registerGoals();
+        this.eatGrassGoal = new EatGrassGoal(this);
         this.goalSelector.addGoal(0,new SwimGoal(this));
-        this.goalSelector.addGoal(1,new PanicGoal(this,1.25D));
+        this.goalSelector.addGoal(1,new RandomWalkingGoal(this, 0.5D));
         this.goalSelector.addGoal(2,new BreedGoal(this,1.0D));
         this.goalSelector.addGoal(3,new TemptGoal(this,1.1D,TEMPTATION_ITEM,false));
         this.goalSelector.addGoal(4,new FollowParentGoal(this,1.1D));
         this.goalSelector.addGoal(5,this.eatGrassGoal);
-        this.goalSelector.addGoal(6,new WaterAvoidingRandomWalkingGoal(this,1.0D));
-        this.goalSelector.addGoal(7,new LookAtGoal(this, PlayerEntity.class,6.0F));
-        this.goalSelector.addGoal(8,new LookRandomlyGoal(this));
+        this.goalSelector.addGoal(6,new PanicGoal(this,1));
+        this.goalSelector.addGoal(7,new WaterAvoidingRandomWalkingGoal(this,1.0D));
+        this.goalSelector.addGoal(8,new LookAtGoal(this, PlayerEntity.class,6.0F));
+        this.goalSelector.addGoal(9,new LookRandomlyGoal(this));
     }
 
     @Override

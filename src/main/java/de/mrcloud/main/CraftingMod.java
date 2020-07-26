@@ -39,7 +39,7 @@ public class CraftingMod {
 
         CmBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         CmItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-
+        CmEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

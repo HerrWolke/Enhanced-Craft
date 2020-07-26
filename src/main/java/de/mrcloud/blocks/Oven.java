@@ -140,4 +140,5 @@ public class Oven extends Block {
     public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return 0.6F;
     }
+    
 }

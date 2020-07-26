@@ -20,5 +20,6 @@
 
   "itemGroup.CraftingMod": "Crafting Mod",
 
-  "item.craftingmod.ruby_apple": "Ruby Apple"
+  "item.craftingmod.ruby_apple": "Ruby Apple",
+  "entity.craftingmod.hog": "Hog"
 }
